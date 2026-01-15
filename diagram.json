@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "author": "Janvi",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-bme280",
+      "id": "bme",
+      "top": -120,
+      "left": 200,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-bh1750",
+      "id": "light",
+      "top": 0,
+      "left": 200,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-analog-input",
+      "id": "gas",
+      "top": 120,
+      "left": 200,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["esp:3V3", "bme:VCC", "red"],
+    ["esp:GND", "bme:GND", "black"],
+    ["esp:21", "bme:SDA", "green"],
+    ["esp:22", "bme:SCL", "green"],
+
+    ["esp:3V3", "light:VCC", "red"],
+    ["esp:GND", "light:GND", "black"],
+    ["esp:21", "light:SDA", "green"],
+    ["esp:22", "light:SCL", "green"],
+
+    ["esp:3V3", "gas:VCC", "red"],
+    ["esp:GND", "gas:GND", "black"],
+    ["esp:34", "gas:OUT", "blue"]
+  ]
+}
